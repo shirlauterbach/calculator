@@ -13,11 +13,11 @@ class App extends React.Component {
   
   render() {
     return <div className="app-body">
-      <div>
+      <div className="calculator-header">
         Calculator
       </div>
       <Calculator></Calculator>
-      
+
     </div>
   }
 }

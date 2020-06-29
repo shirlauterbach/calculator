@@ -2,7 +2,7 @@ import React from 'react';
 import Result from './Result'
 import CalculaterButton from './CalculatorButton'
 import History from './History'
-
+import '../style/calculator.css'
 const elements = ['1','2','3','+','4','5','6','-','7','8','9',':','*','^', 'CE','=','history']
 
 export default class Calculator extends React.Component {
@@ -46,6 +46,17 @@ export default class Calculator extends React.Component {
           isShowHistory: this.state.isShowHistory
         }) 
         break;
+      case this.state.result.includes("*"):
+        checkedResult = this.state.result
+        numbers = checkedResult.split("*")
+        let multiplyres= parseInt(numbers[0])*(parseInt(numbers[1]))
+        console.log(multiplyres)
+        this.setState({
+          result: multiplyres,
+          history: this.state.history.concat([multiplyres]),
+          isShowHistory: this.state.isShowHistory
+        })
+        break;
       case this.state.result.includes("^"):
         checkedResult = this.state.result
         numbers = checkedResult.split("^")
@@ -82,7 +93,7 @@ render() {
   }
 
   return (
-    <div>
+    <div className="calculator">
       <Result result={this.state.result}></Result>
       { elements.map((action, index) => (
         <span><CalculaterButton value={action} onClick={this.onClick}> </CalculaterButton>{ (index+1)%4==0 && <br></br> }</span>	
