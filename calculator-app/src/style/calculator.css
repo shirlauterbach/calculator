@@ -1,5 +1,11 @@
 .calculator {
-    width: 50%;
-    margin: 0 auto;
-    background-color:  "grey";
+	width: 50%;
+	margin: 0 auto;
+	background-color:  "grey";
+}
+.closeHistory {
+	background-color: pink;
+}
+.tmpres {
+	color: grey;
 }
