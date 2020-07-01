@@ -1,9 +1,9 @@
 import React from 'react'
 
-const History = (props) => {
+const History = ({history}) => {
 	return (
 		<div>
-			{props.history.map((result) => (
+			{history.map((result) => (
 				<div> { result } </div>
 			))}
 		</div>

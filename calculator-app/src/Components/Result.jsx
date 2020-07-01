@@ -1,7 +1,6 @@
 import React from 'react';
 
-const Result = (props) => {
-	let result = props.result
+const Result = ({result}) => {
 	return (
 		<div>
 			<span>{result}</span>
