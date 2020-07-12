@@ -2,6 +2,7 @@ import React from 'react';
 import Result from './Result'
 import CalculaterButton from './CalculatorButton'
 import History from './History'
+import axios from 'axios'
 import '../style/calculator.css'
 
 export default class Calculator extends React.Component {
@@ -25,10 +26,14 @@ export default class Calculator extends React.Component {
   elements = ['1','2','3','+','4','5','6','-','7','8','9',':','*','0','^', 'CE','=','history']
 
   async setResult(result) {
+    let history;
+    await axios.post("http://localhost:4000/history", {historyToAdd: result}).then(res => {
+      history = res.data
+    })
     this.setState({...this.state,
       result: result,
       isPressed: true,
-      history: this.state.history.concat([result]),
+      history: history
     })
   }
 
