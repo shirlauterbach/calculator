@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.calculator-header {
+  width: 50%;
+  margin: 0 auto;
+  font-family: fantasy;
+  font-weight: 400;
+  font-size: 50px
+}
+.app-body {
+  width: 50%;
+  margin: 0 auto;
+
+}
