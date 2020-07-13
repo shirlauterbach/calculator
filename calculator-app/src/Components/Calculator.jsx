@@ -3,6 +3,7 @@ import Result from './Result'
 import CalculaterButton from './CalculatorButton'
 import History from './History'
 import axios from 'axios'
+
 import '../style/calculator.css'
 
 export default class Calculator extends React.Component {
@@ -30,10 +31,12 @@ export default class Calculator extends React.Component {
     await axios.post("http://localhost:4000/history", {historyToAdd: result}).then(res => {
       history = res.data
     })
-    this.setState({...this.state,
-      result: result,
+
+    this.setState({
+      ...this.state,
+      result,
       isPressed: true,
-      history: history
+      history
     })
   }
 
